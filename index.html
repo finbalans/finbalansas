@@ -61,42 +61,75 @@
 </head>
 <body>
     <header>
-        <h1>FinBalansas MB</h1>
-        <p>Profesionalios buhalterinės paslaugos</p>
+        <h1 id="hero-title">Patikimos buhalterinės paslaugos</h1>
+        <p id="hero-subtitle">Padedame Jūsų verslui augti! Tvarkinga buhalterija – raktas į sėkmę.</p>
+        <select id="languageSwitcher">
+            <option value="lt">🇱🇹 Lietuvių</option>
+            <option value="en">🇬🇧 English</option>
+        </select>
     </header>
     <nav>
         <a href="#about">Apie mus</a>
         <a href="#services">Paslaugos</a>
         <a href="#contact">Kontaktai</a>
     </nav>
-    <section id="hero" style="text-align: center; padding: 50px; background: linear-gradient(135deg, #3498db, #f39c12); color: white;">
-        <h1>Patikimos buhalterinės paslaugos</h1>
-        <p>Padedame Jūsų verslui augti! Tvarkinga buhalterija – raktas į sėkmę.</p>
-        <a href="#contact" style="padding: 10px 20px; background: white; color: #3498db; text-decoration: none; font-weight: bold; border-radius: 5px;">Susisiekite</a>
-    </section>
     <section id="about">
-        <h2>Apie mus</h2>
-        <p>FinBalansas MB - tai patikima buhalterinės apskaitos įmonė, teikianti profesionalias finansines paslaugas smulkioms ir vidutinėms įmonėms.</p>
+        <h2 id="about-title">Apie mus</h2>
+        <p id="about-text">FinBalansas MB - tai patikima buhalterinės apskaitos įmonė, teikianti profesionalias finansines paslaugas smulkioms ir vidutinėms įmonėms.</p>
     </section>
     <section id="services">
-        <h2>Mūsų paslaugos</h2>
+        <h2 id="services-title">Mūsų paslaugos</h2>
         <ul>
-            <li>Finansinė apskaita</li>
-            <li>Mokesčių konsultacijos</li>
-            <li>Darbo užmokesčio apskaita</li>
-            <li>Metinės finansinės ataskaitos</li>
+            <li id="service-1">Finansinė apskaita</li>
+            <li id="service-2">Mokesčių konsultacijos</li>
+            <li id="service-3">Darbo užmokesčio apskaita</li>
+            <li id="service-4">Metinės finansinės ataskaitos</li>
         </ul>
     </section>
     <section id="contact">
-        <h2>Kontaktai</h2>
-        <p><i class="fa-solid fa-phone"></i> +370 687 82621</p>
-        <p><i class="fa-solid fa-envelope"></i> finbalansas@gmail.com</p>
-        <p><i class="fa-solid fa-map-marker-alt"></i> Kaunas, Lietuva</p>
+        <h2 id="contact-title">Kontaktai</h2>
+        <p id="contact-phone"><i class="fa-solid fa-phone"></i> +370 600 12345</p>
+        <p id="contact-email"><i class="fa-solid fa-envelope"></i> info@finbalansas.lt</p>
+        <p id="contact-address"><i class="fa-solid fa-map-marker-alt"></i> Vilnius, Lietuva</p>
     </section>
     <footer>
         <p>Sekite mus:</p>
         <a href="https://www.facebook.com/jusu_puslapis" target="_blank">Facebook</a>
         <a href="https://www.linkedin.com/in/jusu_profilis" target="_blank">LinkedIn</a>
     </footer>
+    <script>
+        const translations = {
+            lt: {
+                "hero-title": "Patikimos buhalterinės paslaugos",
+                "hero-subtitle": "Padedame Jūsų verslui augti! Tvarkinga buhalterija – raktas į sėkmę.",
+                "about-title": "Apie mus",
+                "about-text": "FinBalansas MB - tai patikima buhalterinės apskaitos įmonė, teikianti profesionalias finansines paslaugas smulkioms ir vidutinėms įmonėms.",
+                "services-title": "Mūsų paslaugos",
+                "service-1": "Finansinė apskaita",
+                "service-2": "Mokesčių konsultacijos",
+                "service-3": "Darbo užmokesčio apskaita",
+                "service-4": "Metinės finansinės ataskaitos",
+                "contact-title": "Kontaktai"
+            },
+            en: {
+                "hero-title": "Reliable Accounting Services",
+                "hero-subtitle": "Helping your business grow! Proper bookkeeping is the key to success.",
+                "about-title": "About Us",
+                "about-text": "FinBalansas MB is a reliable accounting company providing professional financial services to small and medium-sized businesses.",
+                "services-title": "Our Services",
+                "service-1": "Financial Accounting",
+                "service-2": "Tax Consulting",
+                "service-3": "Payroll Accounting",
+                "service-4": "Annual Financial Reports",
+                "contact-title": "Contact Us"
+            }
+        };
+        document.getElementById('languageSwitcher').addEventListener('change', function() {
+            const lang = this.value;
+            Object.keys(translations[lang]).forEach(id => {
+                document.getElementById(id).innerText = translations[lang][id];
+            });
+        });
+    </script>
 </body>
 </html>
